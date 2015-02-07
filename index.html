@@ -105,7 +105,20 @@
             <div class="col-lg-12 text-center">
 				<img src="http://i.imgur.com/XKMHY5L.png"> </br> 
 				IP: MC.ArcadiaCraft.net
-				
+<?php
+$ip = "192.99.21.76";
+$port = "25572";
+
+$data = json_decode(file_get_contents('http://api.minetools.eu/ping/' . $ip . '/' . $port . ''), true);
+
+//var_dump($data);
+if(empty($data['error'])) {
+
+	echo 'Online User(s): ' . $data['players']['online'] . '/' . $data['players']['max'];
+} else {
+	echo 'Server(s) Offline';
+}
+?>
 				</br>
 				
 				<button onclick = "copy()" type="button" class="btn btn-primary btn-lg">
