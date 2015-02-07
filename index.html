@@ -113,16 +113,17 @@
 
 		return true;
 	}
-
-	$.getJSON('http://api.minetools.eu/ping/192.99.21.76/25572', function(data) {
-		if(isEmpty(data.error)){
-			document.getElementById('PlayAmount').textContent = "Players: " + data.players.online + '/ ' + data.players.max;
-			$("#icon").attr("src", data.favicon);
-		}
-		else
-		{
-			document.getElementById('PlayAmount').textContent = "Offline!";
-		}
+	$(document).ready(function() {
+		$.getJSON('http://api.minetools.eu/ping/192.99.21.76/25572', function(data) {
+			if(isEmpty(data.error)){
+				document.getElementById('PlayAmount').textContent = "Players: " + data.players.online + '/ ' + data.players.max;
+				$("#icon").attr("src", data.favicon);
+			}
+			else
+			{
+				document.getElementById('PlayAmount').textContent = "Offline!";
+			}
+		});
 	});
 	</script>
 	
