@@ -94,8 +94,8 @@
     <!-- Page Content -->
     <div class="container">
 	
-	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js">
-	function copy() {
+	<script>
+		function copy() {
 		//window.clipboardData.setData('text', 'mc.arcadiacraft.net');
 		window.prompt("Copy to clipboard: Ctrl+C, Enter", 'mc.arcadiacraft.net');
 	}
@@ -113,10 +113,13 @@
 
 		return true;
 	}
+	</script>
+	
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js">
 	$(document).ready(function() {
 		$.getJSON('http://api.minetools.eu/ping/192.99.21.76/25572', function(data) {
 			if(isEmpty(data.error)){
-				document.getElementById('PlayAmount').textContent = "Players: " + data.players.online + '/ ' + data.players.max;
+				document.getElementById('PlayAmount').textContent = "Player(s): " + data.players.online + '/ ' + data.players.max;
 				$("#icon").attr("src", data.favicon);
 			}
 			else
