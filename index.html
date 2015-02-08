@@ -84,6 +84,10 @@
                     <li>
                         <a class="glyphicon glyphicon-comment" href="http://arcadiagamingtech.enjin.com"> Forums</a>
                     </li>
+					<li>
+						<a class="glyphicon glyphicon-arrow-up" href="http://www.reddit.com/r/ArcadiaGaming"> Reddit</a>
+					
+					</li>
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
@@ -100,30 +104,6 @@
 		window.prompt("Copy to clipboard: Ctrl+C, Enter", 'mc.arcadiacraft.net');
 	}
 	
-	function isEmpty(obj) {
-
-		if (obj == null) return true;
-    
-		if (obj.length > 0)    return false;
-		if (obj.length === 0)  return true;
-
-		for (var key in obj) {
-			if (hasOwnProperty.call(obj, key)) return false;
-		}
-
-		return true;
-	}
-
-	$.getJSON('http://api.minetools.eu/ping/192.99.21.76/25572', function(data) {
-		if(isEmpty(data.error)){
-			document.getElementById('PlayAmount').textContent = "Players: " + data.players.online + '/ ' + data.players.max;
-			$("#icon").attr("src", data.favicon);
-		}
-		else
-		{
-			document.getElementById('PlayAmount').textContent = "Offline!";
-		}
-	});
 	</script>
 	
         <div class="row">
@@ -149,8 +129,7 @@
 
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
-	
-	<script src="http://code.jquery.com/jquery-2.1.0.min.js" type="text/javascript"></script>
+
 
 </body>
 
